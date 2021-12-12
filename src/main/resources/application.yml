@@ -1,0 +1,17 @@
+server:
+  port: 5555
+  
+spring:
+  application:
+    name: API-GATEWAY
+   
+#greet & Feign as an alias names   
+zuul:
+  prefix: /ms
+  routes:
+    greet:    
+      path: /api1/**
+      service-id: WELCOMESERVICE
+    Feign:
+      path: /api2/**
+      service-id: FEIGNCLIENT
